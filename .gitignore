@@ -1,0 +1,14 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+
+# Firebase & AI Tools
+.firebase/
+firebase-debug.log
+.agents/
+.windsurf/
+.vite/

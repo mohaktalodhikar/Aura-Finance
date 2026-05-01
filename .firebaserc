@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "gen-lang-client-0719550517"
+  },
+  "targets": {
+    "gen-lang-client-0719550517": {
+      "hosting": {
+        "aura-finance-site": [
+          "AuraFinance"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

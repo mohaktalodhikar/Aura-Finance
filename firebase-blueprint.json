@@ -1,0 +1,71 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A user profile",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "name": { "type": "string" }
+      },
+      "required": ["userId", "email"]
+    },
+    "Transaction": {
+      "title": "Transaction",
+      "description": "A financial transaction",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "amount": { "type": "number" },
+        "date": { "type": "string", "format": "date-time" },
+        "category": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "required": ["userId", "amount", "date", "category"]
+    },
+    "Budget": {
+      "title": "Budget",
+      "description": "A user budget",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "category": { "type": "string" },
+        "limit": { "type": "number" },
+        "spent": { "type": "number" }
+      },
+      "required": ["userId", "category", "limit"]
+    },
+    "Goal": {
+      "title": "Goal",
+      "description": "A user financial goal",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "targetAmount": { "type": "number" },
+        "currentAmount": { "type": "number" },
+        "deadline": { "type": "string", "format": "date" }
+      },
+      "required": ["userId", "name", "targetAmount", "currentAmount", "deadline"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User profiles"
+    },
+    "/transactions/{transactionId}": {
+      "schema": { "$ref": "#/entities/Transaction" },
+      "description": "User transactions"
+    },
+    "/budgets/{budgetId}": {
+      "schema": { "$ref": "#/entities/Budget" },
+      "description": "User budgets"
+    },
+    "/goals/{goalId}": {
+      "schema": { "$ref": "#/entities/Goal" },
+      "description": "User goals"
+    }
+  }
+}
