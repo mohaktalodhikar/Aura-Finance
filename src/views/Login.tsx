@@ -270,17 +270,12 @@ export default function Login() {
           
           <div className="max-w-4xl mx-auto relative z-10 text-center">
             <h2 className="text-5xl md:text-6xl font-headline font-extrabold text-white tracking-tight mb-8">Ready to build your ledger?</h2>
-<<<<<<< HEAD
-            <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">Join the elite tier of wealth management. Start tracking, budgeting, and growing your net worth today.</p>
-=======
-            <p className="text-xl text-primary-container mb-12 max-w-2xl mx-auto">Join the elite tier of wealth management. Start tracking, budgeting, and growing your net worth today.</p>
->>>>>>> 25f7ca01d67337a303beda77836dd67669acca07
-            <button 
-              onClick={() => { setIsLogin(false); setShowLanding(false); }}
-              className="px-10 py-5 bg-white text-primary rounded-full text-xl font-bold hover:scale-105 transition-transform shadow-2xl"
-            >
-              Create Free Account
-            </button>
+            <><p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">Join the elite tier of wealth management. Start tracking, budgeting, and growing your net worth today.</p><button
+        onClick={() => { setIsLogin(false); setShowLanding(false); } }
+        className="px-10 py-5 bg-white text-primary rounded-full text-xl font-bold hover:scale-105 transition-transform shadow-2xl"
+      >
+        Create Free Account
+      </button></>
           </div>
         </section>
 
