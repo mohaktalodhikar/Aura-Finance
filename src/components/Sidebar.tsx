@@ -65,15 +65,12 @@ export default function Sidebar({ currentView, setCurrentView }: SidebarProps) {
       </nav>
 
       <div className="mt-auto flex flex-col gap-2">
-        <div className="p-4 bg-primary rounded-xl text-white overflow-hidden relative group cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+        <div className="p-4 bg-primary rounded-xl text-white overflow-hidden relative group shadow-sm">
           <div className="relative z-10">
             <p className="text-xs text-slate-300 font-medium mb-1">Total Assets</p>
             <p className="text-lg font-bold font-headline">{formatCurrency(totalBalance)}</p>
-            <button className="mt-3 w-full py-2 bg-secondary text-white text-xs font-bold rounded-md hover:brightness-110 active:scale-95 transition-all duration-200">
-              Upgrade to Pro
-            </button>
           </div>
-          <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-secondary/20 rounded-full blur-2xl group-hover:bg-secondary/40 transition-all duration-500"></div>
+          <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-secondary/20 rounded-full blur-2xl"></div>
         </div>
         
         <button 

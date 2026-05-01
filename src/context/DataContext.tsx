@@ -13,6 +13,7 @@ export interface Transaction {
 }
 
 export interface Budget {
+  category: string;
   id: string;
   userId: string;
   name: string;

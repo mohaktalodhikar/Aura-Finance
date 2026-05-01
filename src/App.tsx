@@ -91,7 +91,7 @@ function MainLayout({ currentView, setCurrentView }: { currentView: ViewState, s
     <div className="bg-background font-body text-on-background selection:bg-secondary-container antialiased min-h-screen flex">
       <Sidebar currentView={currentView} setCurrentView={setCurrentView} />
       <main className="flex-1 md:ml-64 min-h-screen flex flex-col pb-24 md:pb-0 transition-all duration-500">
-        <TopNav currentView={currentView} />
+        <TopNav currentView={currentView} setCurrentView={setCurrentView} />
         <div className="flex-1">
           {renderView()}
         </div>

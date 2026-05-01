@@ -6,9 +6,10 @@ import { useData } from '../context/DataContext';
 
 interface TopNavProps {
   currentView: ViewState;
+  setCurrentView: (view: ViewState) => void;
 }
 
-export default function TopNav({ currentView }: TopNavProps) {
+export default function TopNav({ currentView, setCurrentView }: TopNavProps) {
   const { transactions, budgets, goals, formatCurrency } = useData();
   const [showNotifications, setShowNotifications] = useState(false);
   const [notifications, setNotifications] = useState<any[]>([]);
@@ -119,17 +120,9 @@ export default function TopNav({ currentView }: TopNavProps) {
   return (
     <header className="sticky top-0 z-30 bg-white/80 backdrop-blur-xl px-6 py-4 flex justify-between items-center border-b border-transparent transition-all duration-300">
       <div className="flex items-center gap-4 flex-1">
-        <h1 className="text-xl font-bold tracking-tighter text-slate-900 font-headline hidden lg:block mr-4">
+        <h1 className="text-xl font-bold tracking-tighter text-slate-900 font-headline">
           {getTitle()}
         </h1>
-        <div className="relative max-w-md w-full group">
-          <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/50 text-sm transition-colors group-focus-within:text-secondary">search</span>
-          <input 
-            type="text" 
-            className="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-sm focus:ring-2 focus:ring-secondary/20 placeholder:text-on-surface-variant/40 transition-all outline-none" 
-            placeholder="Search analytics..." 
-          />
-        </div>
       </div>
       
       <div className="flex items-center gap-2 sm:gap-4">
@@ -177,11 +170,18 @@ export default function TopNav({ currentView }: TopNavProps) {
             </div>
           )}
         </div>
-        <button className="w-10 h-10 rounded-full overflow-hidden bg-slate-200 border-2 border-white shadow-sm cursor-pointer hover:border-secondary/30 active:scale-90 transition-all duration-200 group">
+        <button 
+          type="button"
+          onClick={() => {
+            console.log("Profile button clicked!");
+            setCurrentView('settings');
+          }}
+          className="w-10 h-10 rounded-full overflow-hidden bg-slate-200 border-2 border-white shadow-sm cursor-pointer hover:border-secondary/30 active:scale-90 transition-all duration-200 group relative z-50 pointer-events-auto"
+        >
           <img 
             src={photoURL} 
             alt="User Profile" 
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 pointer-events-none" 
             referrerPolicy="no-referrer"
           />
         </button>
